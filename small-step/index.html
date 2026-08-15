@@ -1,2 +1,161 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Small Step</title></head><body><h1>Small Step</h1><p>A gentle routine tool by gloward · 心向.</p><p><a href="../">← Back to gloward</a></p></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Small Step — 把想做的事情缩小到今天真的能开始的一步。" />
+  <title>Small Step | Gentle Routine Method</title>
+  <style>
+    :root {
+      --bg:#f3f0e7; --paper:#fffdf8; --paper-2:#f8f6ef; --ink:#293129; --muted:#788076;
+      --green:#65775f; --green-2:#879982; --green-soft:#e4e9df; --line:#dedbcf; --danger:#8f665e;
+      --shadow:0 16px 50px rgba(55,63,52,.09); --radius:22px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 8% 4%,rgba(211,221,199,.7),transparent 32rem),radial-gradient(circle at 94% 22%,rgba(232,221,199,.55),transparent 30rem),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    button,input,textarea{font:inherit} button{cursor:pointer} .shell{width:min(1120px,calc(100% - 34px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(243,240,231,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(222,219,207,.75)}
+    .topbar-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:Georgia,"Times New Roman",serif;font-size:24px;color:var(--green);letter-spacing:-.03em;white-space:nowrap}.brand small{display:block;font:500 10px/1.1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+    nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.nav-btn{border:0;background:transparent;color:var(--muted);padding:9px 13px;border-radius:999px;font-size:14px}.nav-btn.active,.nav-btn:hover{background:var(--paper);color:var(--green);box-shadow:0 3px 14px rgba(55,63,52,.06)}
+    main{padding:44px 0 90px}.view{display:none}.view.active{display:block}.hero{min-height:650px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:56px}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--green);font-weight:800}.hero h1,.page-head h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.045em;line-height:1.03}.hero h1{font-size:clamp(48px,6.5vw,78px);margin:14px 0 18px}.hero p{font-size:18px;line-height:1.8;color:var(--muted);max-width:640px}.hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.primary,.secondary{border-radius:999px;padding:12px 18px;border:1px solid var(--green);font-weight:700}.primary{background:var(--green);color:#fff}.secondary{background:transparent;color:var(--green)}
+    .desk{position:relative;min-height:490px}.paper{position:absolute;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px}.paper.one{width:82%;height:320px;left:4%;top:58px;transform:rotate(-2.5deg);padding:28px}.paper.two{width:64%;height:270px;right:0;bottom:22px;transform:rotate(4deg);padding:25px}.tape{position:absolute;width:90px;height:28px;background:rgba(157,171,139,.52);top:-13px;left:50%;transform:translateX(-50%) rotate(-3deg);box-shadow:0 2px 4px rgba(0,0,0,.04)}.paper-title{font-family:Georgia,"Times New Roman",serif;color:var(--green);font-size:25px;margin-bottom:22px}.line{height:1px;background:var(--line);margin:18px 0}.mini-check{display:flex;align-items:center;gap:10px;color:var(--muted);margin:11px 0}.mini-dot{width:22px;height:22px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;font-size:12px}.note{font-family:Georgia,"Times New Roman",serif;font-size:23px;line-height:1.45}.scribble{display:inline;border-bottom:8px solid rgba(195,208,181,.52);line-height:.65}
+    .page-head{margin:14px 0 30px}.page-head h1{font-size:clamp(38px,5vw,58px);margin:8px 0 10px}.page-head p{margin:0;color:var(--muted);line-height:1.7;max-width:680px}.card{background:rgba(255,253,248,.88);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .routine-layout{display:grid;grid-template-columns:310px 1fr;gap:20px}.focus-panel{padding:22px}.focus-panel h2,.tracker h2,.review-card h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;margin:0 0 16px;font-size:24px}.goal-list{display:grid;gap:10px}.goal-card{padding:14px;border:1px solid var(--line);background:var(--paper-2);border-radius:15px}.goal-title-row{display:flex;gap:8px}.goal-card input{width:100%;border:0;background:transparent;color:var(--ink);outline:none}.goal-card .goal-title{font-weight:700;font-size:15px}.goal-card .goal-step{color:var(--muted);font-size:13px;margin-top:5px}.goal-actions{display:flex;justify-content:space-between;align-items:center;margin-top:12px}.text-btn{border:0;background:transparent;color:var(--green);padding:7px 0;font-weight:700;font-size:13px}.text-btn.danger{color:var(--danger)}.add-goal{width:100%;margin-top:12px;padding:11px;border:1px dashed #bfc6b8;border-radius:13px;background:transparent;color:var(--green);font-weight:700}
+    .tracker{padding:22px;overflow:auto}.tracker-top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:10px}.progress-pill{font-size:12px;background:var(--green-soft);color:var(--green);padding:8px 11px;border-radius:999px;font-weight:800}.table-wrap{min-width:630px}.grid-table{display:grid;grid-template-columns:90px repeat(var(--goal-count),minmax(92px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line);border-radius:14px;overflow:hidden}.cell{min-height:54px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:8px;text-align:center;background:rgba(255,255,255,.3);font-size:13px}.cell.head{background:var(--paper-2);font-weight:700;color:var(--green)}.cell.day{justify-content:flex-start;padding-left:16px;font-weight:700;background:var(--paper-2)}.check{width:28px;height:28px;border-radius:50%;border:1px solid #bfc8b9;background:transparent;color:transparent;display:grid;place-items:center;transition:.15s}.check.done{background:var(--green);border-color:var(--green);color:white}.tracker-foot{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:14px;color:var(--muted);font-size:13px}.reset{border:0;background:transparent;color:var(--danger);font-weight:700}
+    .review-grid{display:grid;grid-template-columns:330px 1fr;gap:20px}.review-card{padding:24px}.score{font-family:Georgia,"Times New Roman",serif;font-size:72px;line-height:1;color:var(--green);letter-spacing:-.05em;margin:10px 0}.bar{height:9px;border-radius:999px;background:#e7e5dc;overflow:hidden}.bar>span{display:block;height:100%;background:var(--green);width:0;transition:width .2s}.small{font-size:13px;color:var(--muted);line-height:1.65}.reflection{padding:24px}.reflection label{display:block;font-weight:700;margin:0 0 9px}.reflection textarea{width:100%;min-height:180px;resize:vertical;border:1px solid var(--line);background:var(--paper-2);border-radius:14px;padding:15px;outline:none;color:var(--ink);line-height:1.7}.save-row{display:flex;justify-content:flex-end;margin-top:12px}.saved{font-size:12px;color:var(--muted);margin-right:auto;align-self:center;opacity:0;transition:.2s}.saved.show{opacity:1}
+    .guide{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.guide-step{padding:24px;min-height:210px}.num{font-family:Georgia,"Times New Roman",serif;font-size:42px;color:#a8b39f}.guide-step h3{font-family:Georgia,"Times New Roman",serif;font-size:24px;font-weight:500;margin:16px 0 8px}.guide-step p{color:var(--muted);line-height:1.7;margin:0}.tip{margin-top:20px;padding:14px;border-radius:13px;background:var(--green-soft);color:#51604c;font-size:13px;line-height:1.6}
+    .back-home{display:inline-flex;margin-top:34px;color:var(--muted);text-decoration:none;font-size:13px}.footer{margin-top:64px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media(max-width:850px){.hero,.routine-layout,.review-grid{grid-template-columns:1fr}.desk{min-height:430px}.focus-panel{order:1}.tracker{order:2}.guide{grid-template-columns:1fr}.topbar-inner{height:auto;padding:14px 0;align-items:flex-start}.brand small{display:none}nav{gap:2px}.nav-btn{padding:8px 9px}.hero{padding-top:20px;min-height:auto}.hero h1{font-size:52px}.paper.one{left:0}.paper.two{right:0}.routine-layout{gap:14px}}
+    @media(max-width:520px){.shell{width:min(100% - 22px,1120px)}main{padding-top:28px}.topbar-inner{display:block}.brand{margin-bottom:10px}.topbar nav{justify-content:flex-start;overflow:auto;flex-wrap:nowrap}.hero h1{font-size:44px}.desk{min-height:390px}.paper.one{width:88%;height:280px}.paper.two{width:72%;height:240px}.page-head h1{font-size:40px}.review-card,.reflection,.tracker,.focus-panel,.guide-step{padding:18px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">Small Step<small>Gentle Routine Method</small></div>
+      <nav aria-label="Main navigation">
+        <button class="nav-btn active" data-view="home">Home</button>
+        <button class="nav-btn" data-view="routine">Routine</button>
+        <button class="nav-btn" data-view="review">Review</button>
+        <button class="nav-btn" data-view="guide">Guide</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="home" class="view active">
+      <div class="hero">
+        <div>
+          <div class="kicker">A gentler way to grow</div>
+          <h1>把想做的事，<br><span class="scribble">缩小到真的能开始。</span></h1>
+          <p>很多计划不是不重要，而是第一步太大。Small Step 帮你选出这一周真正想坚持的少数事情，把它们变成今天就能完成的小行动，再用一周的记录看见变化。</p>
+          <div class="hero-actions">
+            <button class="primary" data-go="routine">开始本周 Small Step</button>
+            <button class="secondary" data-go="guide">先看看怎么用</button>
+          </div>
+        </div>
+        <div class="desk" aria-hidden="true">
+          <div class="paper one"><span class="tape"></span><div class="paper-title">This week</div><div class="mini-check"><span class="mini-dot">✓</span> 阅读 3 页</div><div class="mini-check"><span class="mini-dot">✓</span> 拉伸 15 分钟</div><div class="mini-check"><span class="mini-dot">·</span> 留一点时间给自己</div><div class="line"></div><div style="color:var(--muted);font-size:13px">small actions · repeated gently</div></div>
+          <div class="paper two"><span class="tape"></span><div class="note">one small step<br>each day<br><span style="color:var(--green)">makes a difference ♡</span></div><div class="line"></div><div style="color:var(--muted);font-size:12px">完成不是证明意志力，<br>而是留下“我正在行动”的证据。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="routine" class="view">
+      <header class="page-head"><div class="kicker">Weekly Routine</div><h1>这一周，只做少数重要的小行动。</h1><p>建议保留 2–5 个目标。点击目标文字可以直接修改；所有记录只保存在你的浏览器里。</p></header>
+      <div class="routine-layout">
+        <aside class="card focus-panel">
+          <h2>本周聚焦</h2>
+          <div id="goalList" class="goal-list"></div>
+          <button id="addGoal" class="add-goal">＋ 添加小目标</button>
+        </aside>
+        <section class="card tracker">
+          <div class="tracker-top"><h2>每日小目标</h2><span id="progressPill" class="progress-pill">0% complete</span></div>
+          <div class="table-wrap"><div id="trackerGrid" class="grid-table"></div></div>
+          <div class="tracker-foot"><span>每天只需要确认：今天这一步，有没有发生？</span><button id="resetWeek" class="reset">重置本周</button></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="review" class="view">
+      <header class="page-head"><div class="kicker">Weekly Review</div><h1>一周结束后，看见自己已经做了什么。</h1><p>复盘不是为了打分，而是为了知道：什么值得继续，什么需要调整。</p></header>
+      <div class="review-grid">
+        <section class="card review-card"><h2>本周完成度</h2><div id="score" class="score">0%</div><div class="bar"><span id="scoreBar"></span></div><p id="scoreText" class="small">从完成第一步开始，进度就会出现在这里。</p></section>
+        <section class="card reflection"><label for="reflection">这一周，你注意到了什么？</label><textarea id="reflection" placeholder="例如：哪一步最容易开始？什么时候最容易忘记？哪件事做完以后感觉很好？"></textarea><div class="save-row"><span id="saved" class="saved">已保存在此设备</span><button id="saveReflection" class="primary">保存复盘</button></div></section>
+      </div>
+    </section>
+
+    <section id="guide" class="view">
+      <header class="page-head"><div class="kicker">How it works</div><h1>Small Step 的四个步骤</h1><p>先把系统做小，再让行动自然长大。你不需要一次把计划做完整。</p></header>
+      <div class="guide">
+        <article class="card guide-step"><div class="num">01</div><h3>选择想坚持的小目标</h3><p>从真正重要、也确实想做的事情开始。一次不要塞太多，2–5 个就够。</p></article>
+        <article class="card guide-step"><div class="num">02</div><h3>设定最小行动</h3><p>把它缩小成今天也能完成的一步。重点不是“理想剂量”，而是低阻力启动。</p><div class="tip">例：阅读 → 3 页　｜　拉伸 → 15 分钟</div></article>
+        <article class="card guide-step"><div class="num">03</div><h3>每天完成 & 记录</h3><p>发生了就打勾。记录的作用，是让微小但真实的行动变得可见。</p></article>
+        <article class="card guide-step"><div class="num">04</div><h3>每周复盘 & 调整</h3><p>看完成情况，也看体验。保留有效的部分，调整不适合现在生活节奏的部分。</p></article>
+      </div>
+    </section>
+
+    <a class="back-home" href="../">← Back to gloward projects</a>
+    <footer class="footer"><span>Small Step · Gentle Routine Method</span><span>Data is stored locally in your browser.</span></footer>
+  </main>
+
+  <script>
+    const DAYS = ['周一','周二','周三','周四','周五','周六','周日'];
+    const STORAGE_KEY = 'small-step-v1';
+    const defaultState = () => ({
+      goals:[
+        {id:crypto.randomUUID?.() || 'g1', title:'阅读', step:'3 页'},
+        {id:crypto.randomUUID?.() || 'g2', title:'拉伸', step:'15 分钟'}
+      ], checks:{}, reflection:''
+    });
+    function load(){ try { return {...defaultState(), ...JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}; } catch { return defaultState(); } }
+    let state = load();
+    function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); updateReview(); }
+    function key(day,id){ return day+'::'+id; }
+
+    function showView(id){
+      document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
+      document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===id));
+      if(id==='review') updateReview();
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+    document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.go)));
+
+    function renderGoals(){
+      const list=document.getElementById('goalList'); list.innerHTML='';
+      state.goals.forEach((g,i)=>{
+        const el=document.createElement('div'); el.className='goal-card';
+        el.innerHTML=`<div class="goal-title-row"><input class="goal-title" aria-label="目标名称" value="${escapeHtml(g.title)}"><input class="goal-step" aria-label="最小行动" value="${escapeHtml(g.step)}"></div><div class="goal-actions"><span style="font-size:12px;color:var(--muted)">Goal ${i+1}</span><button class="text-btn danger">删除</button></div>`;
+        const inputs=el.querySelectorAll('input');
+        inputs[0].addEventListener('change',e=>{g.title=e.target.value.trim()||'未命名';save();renderTracker()});
+        inputs[1].addEventListener('change',e=>{g.step=e.target.value.trim()||'最小一步';save();renderTracker()});
+        el.querySelector('button').addEventListener('click',()=>{ if(state.goals.length<=1) return; state.goals.splice(i,1); Object.keys(state.checks).forEach(k=>{if(k.endsWith('::'+g.id)) delete state.checks[k]}); save(); renderAll(); });
+        list.appendChild(el);
+      });
+      document.getElementById('addGoal').disabled=state.goals.length>=5;
+      document.getElementById('addGoal').style.opacity=state.goals.length>=5?'.45':'1';
+    }
+    function renderTracker(){
+      const grid=document.getElementById('trackerGrid'); grid.innerHTML=''; grid.style.setProperty('--goal-count',state.goals.length);
+      const blank=document.createElement('div'); blank.className='cell head'; blank.textContent='→'; grid.appendChild(blank);
+      state.goals.forEach(g=>{const c=document.createElement('div');c.className='cell head';c.textContent=g.title;grid.appendChild(c)});
+      DAYS.forEach(day=>{
+        const d=document.createElement('div');d.className='cell day';d.textContent=day;grid.appendChild(d);
+        state.goals.forEach(g=>{
+          const c=document.createElement('div');c.className='cell'; const b=document.createElement('button'); b.className='check'+(state.checks[key(day,g.id)]?' done':''); b.setAttribute('aria-label',`${day} ${g.title}`); b.textContent='✓';
+          b.addEventListener('click',()=>{state.checks[key(day,g.id)]=!state.checks[key(day,g.id)];save();renderTracker()}); c.appendChild(b);grid.appendChild(c);
+        });
+      });
+      document.getElementById('progressPill').textContent=percent()+'% complete';
+    }
+    function percent(){ const total=DAYS.length*state.goals.length; if(!total) return 0; const done=DAYS.reduce((n,d)=>n+state.goals.filter(g=>state.checks[key(d,g.id)]).length,0); return Math.round(done/total*100); }
+    function updateReview(){ const p=percent(); document.getElementById('score').textContent=p+'%'; document.getElementById('scoreBar').style.width=p+'%'; document.getElementById('scoreText').textContent=p===0?'从完成第一步开始，进度就会出现在这里。':p<50?'已经留下了一些行动证据。看看哪些步骤最容易发生。':p<85?'这一周已经有稳定的行动发生。复盘一下什么帮助了你。':'完成度很高。比起继续加码，更值得观察哪些做法可以轻松保留。'; document.getElementById('reflection').value=state.reflection||''; }
+    function escapeHtml(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+    function renderAll(){renderGoals();renderTracker();updateReview()}
+    document.getElementById('addGoal').addEventListener('click',()=>{if(state.goals.length>=5)return;state.goals.push({id:crypto.randomUUID?.()||('g'+Date.now()),title:'新目标',step:'最小一步'});save();renderAll()});
+    document.getElementById('resetWeek').addEventListener('click',()=>{ if(confirm('清空本周所有打勾记录？目标本身会保留。')){state.checks={};save();renderTracker()} });
+    document.getElementById('saveReflection').addEventListener('click',()=>{state.reflection=document.getElementById('reflection').value;save();const s=document.getElementById('saved');s.classList.add('show');setTimeout(()=>s.classList.remove('show'),1800)});
+    renderAll();
+  </script>
+</body>
+</html>
