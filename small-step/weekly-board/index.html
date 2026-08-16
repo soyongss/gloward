@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small Step · 本周计划</title>
+<style>
+:root{
+  --bg:#fbfaf5;--paper:#fffefb;--ink:#2b3526;--muted:#73786d;--green:#728c55;--green2:#89a46a;
+  --line:#e5e0d4;--soft:#eef3e5;--warm:#fbf5e6;--shadow:0 4px 18px rgba(72,78,61,.06)
+}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+body{min-width:1180px}.page{width:100%;max-width:1440px;margin:0 auto;padding:42px 48px 34px}.brand{display:flex;align-items:center;gap:10px;color:#6f8b52;font:600 20px/1 Georgia,"Times New Roman",serif;margin-bottom:34px}.leaf{font-size:17px}.top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px}.title h1{font:500 58px/1.06 Georgia,"Songti SC","STSong",serif;letter-spacing:-2px;margin:0 0 18px}.subtitle{font-size:18px;color:#666d61}.progress{width:300px;text-align:right;margin-bottom:10px}.progress-label{font-size:15px;color:#757a70;margin-bottom:14px}.progress-label b{font:italic 24px/1 Georgia,serif;color:#7e975f;font-weight:500}.bar{height:9px;border-radius:20px;background:#e6e4db;overflow:hidden}.bar i{display:block;width:82%;height:100%;background:#6f8f52;border-radius:20px}.panel{background:rgba(255,255,255,.78);border:1px solid #ece8df;border-radius:16px;box-shadow:var(--shadow)}
+.routine{height:72px;display:flex;align-items:center;padding:0 20px;margin-bottom:12px}.routine-label{font-weight:700;font-size:15px;margin-right:20px}.chip{height:42px;display:flex;align-items:center;gap:10px;padding:0 14px;border-radius:14px;background:#fff;border:1px solid #eeeae1;box-shadow:0 3px 11px rgba(75,80,65,.05);font-size:14px;margin-right:10px}.num{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:700 13px/1 Georgia,serif}.num.one{background:#dce9c9}.num.two{background:#f4dda3}.chip strong{font-size:15px}.chip small{font-size:13px;color:#596055}.routine .arrow{margin-left:auto;font-size:26px;color:#8c9388}.controls{height:72px;display:grid;grid-template-columns:250px 150px 1fr 160px;gap:12px;align-items:center;padding:10px 16px;margin-bottom:12px}.control{height:50px;border:1px solid #e8e3d7;background:#fffefa;border-radius:13px;padding:0 16px;display:flex;align-items:center;color:#555d50;font-size:15px}.control.icon:before{content:"◷";font-size:20px;margin-right:10px}.control.select:before{content:"▣";font-size:16px;margin-right:10px}.control.placeholder{color:#aaa99f}.add{height:50px;border:0;border-radius:13px;background:#789558;color:#fff;font-weight:700;font-size:15px}.calendar{border:1px solid #e7e2d7;border-radius:14px;background:#fffefb;overflow:hidden}.grid{display:grid;grid-template-columns:82px repeat(7,1fr)}.head{height:94px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 20px 12px;background:#fffefb}.head.blank{background:#fffefb}.head .dow{font-size:14px;color:#555b52}.head .date{font:italic 28px/1 Georgia,serif;text-align:right;margin-top:8px}.head.today{position:relative;background:#fffefb;outline:1px solid #cbd9ba;outline-offset:-1px;border-radius:12px 12px 0 0}.head.today:after{content:"";position:absolute;left:38%;right:38%;bottom:0;height:3px;background:#89a76a}.today-badge{display:inline-block;background:#7f9a60;color:white;border-radius:12px;padding:4px 9px;font-size:12px;font-weight:700}.time,.cell{height:58px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.time{display:flex;align-items:flex-start;justify-content:center;padding-top:10px;color:#74806c;font:700 13px/1 Georgia,serif;background:#fffefb}.cell{position:relative;background:#fffefb}.event{position:absolute;left:10px;right:10px;top:7px;min-height:92px;border-radius:12px;padding:13px 14px;border:1px solid #d9dfcf;background:#eef3e6;box-shadow:0 3px 10px rgba(80,86,68,.05);z-index:2}.event.warm{background:#fbf6e8;border-color:#e9dfc8}.event.white{background:#fffefb;border-color:#e2ddd1}.event .name{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;border-radius:50%;background:#96b36d;flex:0 0 auto}.dot.yellow{background:#efc85b}.event .meta{font-size:12px;color:#666b62;line-height:1.7}.event.tall{min-height:118px}.foot{margin:16px auto 0;width:56%;background:rgba(250,248,240,.9);border-radius:14px;padding:13px 20px;text-align:center;font-size:16px;color:#4f554d}
+@media(max-width:1260px){body{min-width:1080px}.page{padding-left:28px;padding-right:28px}.title h1{font-size:50px}.controls{grid-template-columns:220px 130px 1fr 145px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="brand"><span class="leaf">❧</span> Small Step</div>
+  <div class="top">
+    <div class="title"><h1>本周计划</h1><div class="subtitle">把想做的事，安排进每一天。</div></div>
+    <div class="progress"><div class="progress-label"><b>10</b> / 12 已完成</div><div class="bar"><i></i></div></div>
+  </div>
+
+  <div class="panel routine">
+    <div class="routine-label">本周 Routine</div>
+    <div class="chip"><span class="num one">1</span><strong>拉伸 15分钟</strong><small>10:00 · 15分钟</small></div>
+    <div class="chip"><span class="num two">2</span><strong>读书 3页</strong><small>10:30 · 20分钟</small></div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="panel controls">
+    <div class="control select">本周其他日程</div>
+    <div class="control icon">12:00</div>
+    <div class="control placeholder">例如：周三牙医、周五买菜</div>
+    <button class="add">＋ 添加日程</button>
+  </div>
+
+  <div class="calendar">
+    <div class="grid" id="cal"></div>
+  </div>
+  <div class="foot">🌱 给自己留一点空白，也是一种计划。</div>
+</div>
+<script>
+const days=[['周一','10'],['周二','11'],['周三','12'],['周四','13'],['周五','14'],['周六','15'],['周日','16']];
+const hours=['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'];
+const cal=document.getElementById('cal');
+cal.insertAdjacentHTML('beforeend','<div class="head blank"></div>');
+days.forEach((d,i)=>cal.insertAdjacentHTML('beforeend',`<div class="head ${i===4?'today':''}"><div class="dow">${i===4?'<span class="today-badge">今天</span> ':''}${d[0]}</div><div class="date">${d[1]}</div></div>`));
+const events={
+ '10:00-0':['读书 3页','10:30 · 20分钟','泡茶/咖啡','green'],
+ '10:00-1':['读书 3页','10:30 · 20分钟','泡茶/咖啡','green'],
+ '10:00-2':['读书 3页','10:30 · 20分钟','泡茶/咖啡','green'],
+ '10:00-3':['读书 3页','10:30 · 20分钟','泡茶/咖啡','green'],
+ '10:00-4':['读书 3页','10:30 · 20分钟','泡茶/咖啡','green'],
+ '10:00-5':['拉伸 15分钟','10:00 · 15分钟','起床后','white'],
+ '10:00-6':['拉伸 15分钟','10:00 · 15分钟','起床后','white'],
+ '12:00-2':['研究 coding 修改','12:00 · 其他日程','','warm'],
+ '12:00-3':['准备会议','12:00 · 其他日程','','warm'],
+ '12:00-4':['整理计划','12:00 · 其他日程','','warm'],
+ '14:00-3':['众筹 이미지 수정','14:00 · 其他日程','','warm'],
+ '14:00-4':['修改网站','14:00 · 其他日程','','warm']
+};
+hours.forEach(h=>{
+  cal.insertAdjacentHTML('beforeend',`<div class="time">${h}</div>`);
+  days.forEach((d,i)=>{
+    const key=`${h}-${i}`,e=events[key];
+    let html='';
+    if(e){const cls=e[3]==='warm'?'warm':e[3]==='white'?'white':'';const dot=e[3]==='warm'?'yellow':'';html=`<div class="event ${cls}"><div class="name"><span class="dot ${dot}"></span>${e[0]}</div><div class="meta">${e[1]}${e[2]?'<br>'+e[2]:''}</div></div>`}
+    cal.insertAdjacentHTML('beforeend',`<div class="cell">${html}</div>`);
+  });
+});
+</script>
+</body>
+</html>
